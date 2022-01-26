@@ -10,8 +10,27 @@
     </div>
 
     <div class="col-lg-1 col-md-3 btn-container">
-      <button (click)="randomWord()" type="button" class="btn btn-light"><img src="../../assets/img/refresh.png"
-          alt="refresh"></button>
+      <button (click)="randomWord()" type="button" class="btn btn-random btn-light"><img
+          src="../../assets/img/refresh.png" alt="refresh"></button>
     </div>
   </div>
+
+  <form (ngSubmit)="onSubmit($event)" [formGroup]="form">
+    <div class="add">
+      <div class="row">
+        <div class="col add-word">
+          <input type="text" id="word" class="form-control" formControlName="word" placeholder="słowo"
+            aria-label="Слово">
+        </div>
+        <div class="col add-translate">
+          <input type="text" id="translate" class="form-control" formControlName="translation" placeholder="перевод"
+            aria-label="Перевод">
+        </div>
+      </div>
+      <div class="d-grid gap-2">
+        <button [disabled]="form.invalid" (click)="onSubmit($event)" class="btn add-btn btn-primary"
+          type="submit">Добавить</button>
+      </div>
+    </div>
+  </form>
 </div>
