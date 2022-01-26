@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div (click)="translate()" class="word col-lg-11 col-md-9">
+      <div *ngIf="!trans" class="not-trans">
+        <h2>{{word}}</h2>
+      </div>
+      <div *ngIf="trans" class="trans">
+        <h2>{{translation}}</h2>
+      </div>
+    </div>
+
+    <div class="col-lg-1 col-md-3 btn-container">
+      <button (click)="randomWord()" type="button" class="btn btn-light"><img src="../../assets/img/refresh.png"
+          alt="refresh"></button>
+    </div>
+  </div>
+</div>
